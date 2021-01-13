@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Button from '../../../components/Button';
+import { Title } from './styles';
 
 class Login extends Component {
 
@@ -22,6 +23,7 @@ class Login extends Component {
     render() {
         return (
             <div>
+                <Title>Cardápio Virtual</Title>
                 <form>
                     <label>CPF</label>
                     <input placeholder="111.111.111-11" />
