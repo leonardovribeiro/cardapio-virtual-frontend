@@ -1,11 +1,12 @@
 import React from 'react';
+import { Container } from './styles';
 
 const Index = () => {
     return (
-        <div>
-            <h1>Bem vindo ao Cardápio Virtual.</h1>
+        <Container>
+            <h1>Bem-vindo(a) ao Cardápio Virtual.</h1>
             <p>Para acessar o sistema, por favor use a câmera do seu aparelho para ler o código que está na mesa.</p>
-        </div>
+        </Container>
     );
 };
 
