@@ -18,7 +18,7 @@ export const Container = styled.nav`
         transition: background-color 0.2s;
 
         span {
-        font-size: 12px;
+        font-size: 10px;
         }
 
         &:hover{

@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
-import {Container} from './styles';
+import {Container, Content} from './styles';
 import Header from '../../../components/Header';
 import Navigation from '../../../components/Navigation';
+import HorizontalScrollView from '../../../components/HorizontalScrollView';
 class Main extends Component {
     render() {
         return (
             <Container>
                 <Header/>
-                <h1>Main</h1>
+                <Content>
+                    <HorizontalScrollView title="Mais pedidos"/>
+                    <HorizontalScrollView title="Promoções"/>
+                </Content>
                 <Navigation/>
             </Container>
         );
