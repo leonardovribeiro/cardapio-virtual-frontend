@@ -7,6 +7,7 @@ import Categories from '../pages/Customer/Categories';
 import Error from '../pages/Error';
 import Order from '../pages/Customer/Order';
 import Comanda from '../pages/Customer/Comanda';
+import Payment from '../pages/Customer/Payment';
 import Help from '../pages/Customer/Help';
 
 const Routes = () => {
@@ -18,6 +19,7 @@ const Routes = () => {
             <Route exact path="/categories" component={Categories}/>
             <Route exact path="/order" component={Order}/>
             <Route exact path="/comanda" component={Comanda}/>
+            <Route exact path="/payment" component={Payment}/>
             <Route exact path="/help" component={Help}/>
             <Route path="*" component={Error}/>
         </Switch>
