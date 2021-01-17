@@ -9,6 +9,7 @@ import Order from '../pages/Customer/Order';
 import Comanda from '../pages/Customer/Comanda';
 import Payment from '../pages/Customer/Payment';
 import Help from '../pages/Customer/Help';
+import CategoryItems from '../pages/Customer/CategoryItems';
 
 const Routes = () => {
     return (
@@ -17,6 +18,7 @@ const Routes = () => {
             <Route exact path="/acessar/:id" component={Login}/>
             <Route exact path="/main" component={Main}/>
             <Route exact path="/categories" component={Categories}/>
+            <Route exact path="/category_items" component={CategoryItems}/> 
             <Route exact path="/order" component={Order}/>
             <Route exact path="/comanda" component={Comanda}/>
             <Route exact path="/payment" component={Payment}/>
