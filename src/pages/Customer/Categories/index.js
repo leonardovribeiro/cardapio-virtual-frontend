@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { Container } from './styles';
-import Navigation from '../../../components/Navigation';
 import Header from '../../../components/Header';
+import VerticalScrollView from '../../../components/VerticalScrollView';
+import Navigation from '../../../components/Navigation';
 
 class Categories extends Component {
     render(){
         return (
             <Container>
                 <Header />
-                <h1>Categorias</h1>
+                <VerticalScrollView/>
                 <Navigation/>
             </Container>
         )
