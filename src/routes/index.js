@@ -10,6 +10,7 @@ import Comanda from '../pages/Customer/Comanda';
 import Payment from '../pages/Customer/Payment';
 import Help from '../pages/Customer/Help';
 import CategoryItems from '../pages/Customer/CategoryItems';
+import ProductDetail from '../pages/Customer/ProductDetail';
 
 const Routes = () => {
     return (
@@ -23,6 +24,7 @@ const Routes = () => {
             <Route exact path="/comanda" component={Comanda}/>
             <Route exact path="/payment" component={Payment}/>
             <Route exact path="/help" component={Help}/>
+            <Route exact path="/product-detail" component={ProductDetail}/>
             <Route path="*" component={Error}/>
         </Switch>
     )
