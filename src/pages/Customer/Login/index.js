@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Container, Title, Form } from './styles';
-
 class Login extends Component {
 
     constructor(props){
@@ -23,9 +22,9 @@ class Login extends Component {
         return (
             <Container>
                 <Title>Cardápio Virtual</Title>
-                <Form action="">
+                <Form>
                     <input placeholder="Digite aqui o seu cpf" type="text" />
-                    <button type="submit">Acessar</button>
+                    <button onClick={()=> this.props.history.push('/main')}>Acessar</button>
                 </Form>
             </Container>
         );

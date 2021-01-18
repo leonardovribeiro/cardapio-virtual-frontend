@@ -7,8 +7,9 @@ import Categories from '../pages/Customer/Categories';
 import Error from '../pages/Error';
 import Order from '../pages/Customer/Order';
 import Comanda from '../pages/Customer/Comanda';
-import Principal from '../pages/Customer/Principal';
+import Payment from '../pages/Customer/Payment';
 import Help from '../pages/Customer/Help';
+import CategoryItems from '../pages/Customer/CategoryItems';
 
 const Routes = () => {
     return (
@@ -17,9 +18,10 @@ const Routes = () => {
             <Route exact path="/acessar/:id" component={Login}/>
             <Route exact path="/main" component={Main}/>
             <Route exact path="/categories" component={Categories}/>
+            <Route exact path="/category_items" component={CategoryItems}/> 
             <Route exact path="/order" component={Order}/>
             <Route exact path="/comanda" component={Comanda}/>
-            <Route exact path="/principal" component={Principal}/>
+            <Route exact path="/payment" component={Payment}/>
             <Route exact path="/help" component={Help}/>
             <Route path="*" component={Error}/>
         </Switch>

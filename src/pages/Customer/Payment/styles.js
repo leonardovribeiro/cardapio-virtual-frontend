@@ -9,14 +9,16 @@ export const Container = styled.div`
 `;
 
 export const Form = styled.form`
-    width: 100%;
-    height: 100%auto;
     display: flex;
     flex-direction: column;
     padding: 20px;
 
     p {
         margin-bottom: 10px;
+    }
+
+    label {
+        margin-left: 6px;
     }
 
     button {
@@ -33,14 +35,8 @@ export const Form = styled.form`
             background: ${shade(0.2, '#C8161D')}
         }
     }
-
 `;
 
 export const Wrapper = styled.div`
-    label {
-        margin-left: 10px;
-    }
-    input {
-        margin-bottom: 10px;
-    }
+    margin-bottom: 10px;
 `;
