@@ -2,8 +2,11 @@ import React from 'react';
 import { Container, Wrapper, Table } from './styles';
 import Header from '../../../components/Header';
 import Navigation from '../../../components/Navigation';
+import { useHistory } from 'react-router-dom';
 
 const ProductDetail = () => {
+    const history = useHistory();
+
     return(
         <Container>
             <Header/>
@@ -37,7 +40,9 @@ const ProductDetail = () => {
                         <td>R$ 100,00</td>
                     </tr>
                 </Table>
-                <button>Adicionar ao pedido</button>
+                <button onClick={() => {
+                    history.push('/order')
+                }} >Adicionar ao pedido</button>
             </Wrapper>
             <Navigation/>
         </Container>
