@@ -5,4 +5,9 @@ export const Container = styled.div`
     flex-direction: column;
     justify-content: space-between;
     height: 100vh;
+
+    .table-comanda{
+        width: 60%;
+        margin: 10px 0px 0px 0px;
+    }
 `;

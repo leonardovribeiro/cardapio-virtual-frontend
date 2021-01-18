@@ -4,12 +4,30 @@ import Navigation from '../../../components/Navigation';
 import Header from '../../../components/Header';
 
 class Comanda extends Component {
-    render(){
+    render() {
         return (
             <Container>
                 <Header />
-                <h1>Comanda</h1>
-                <Navigation/>
+                <div>
+                    <table className='table-comanda'>
+                        <tr>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            <th>Age</th>
+                        </tr>
+                        <tr>
+                            <td>Jill</td>
+                            <td>Smith</td>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <td>Eve</td>
+                            <td>Jackson</td>
+                            <td>94</td>
+                        </tr>
+                    </table>
+                </div>
+                <Navigation />
             </Container>
         )
     }
