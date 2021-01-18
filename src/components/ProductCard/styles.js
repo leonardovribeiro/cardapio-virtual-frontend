@@ -18,4 +18,9 @@ export const Container = styled.div`
     span {
         font-size: 12px;
     }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
 `;
