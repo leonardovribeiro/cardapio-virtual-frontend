@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Container, Wrapper, Item, Box } from './styles';
 import Navigation from '../../../components/Navigation';
 import Header from '../../../components/Header';
-
 class Order extends Component {
+
     render(){
         return (
             <Container>
@@ -88,8 +88,12 @@ class Order extends Component {
                         </Item>   
                     </Wrapper>
                     <Box>
-                        <button>Fazer pedido</button>
-                        <button>Cancelar</button>
+                        <button onClick={
+                            () => this.props.history.push('/main')
+                        }>Fazer pedido</button>
+                        <button onClick={
+                            () => this.props.history.push('/main')
+                        }>Cancelar</button>
                     </Box>
                 </Container>
                 <Navigation/>
