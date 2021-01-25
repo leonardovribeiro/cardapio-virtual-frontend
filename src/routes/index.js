@@ -19,12 +19,12 @@ const Routes = () => {
             <Route exact path="/acessar/:id" component={Login}/>
             <Route exact path="/main" component={Main}/>
             <Route exact path="/categories" component={Categories}/>
-            <Route exact path="/category_items" component={CategoryItems}/> 
+            <Route exact path="/category/:id" component={CategoryItems}/> 
             <Route exact path="/order" component={Order}/>
             <Route exact path="/comanda" component={Comanda}/>
             <Route exact path="/payment" component={Payment}/>
             <Route exact path="/help" component={Help}/>
-            <Route exact path="/product-detail" component={ProductDetail}/>
+            <Route exact path="/product-detail/:id" component={ProductDetail}/>
             <Route path="*" component={Error}/>
         </Switch>
     )

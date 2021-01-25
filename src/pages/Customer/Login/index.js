@@ -1,34 +1,30 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import { Container, Title, Form } from './styles';
-class Login extends Component {
+import { useParams, useHistory } from 'react-router-dom';
 
-    constructor(props){
-        super(props);
-        
-        this.state = {
-            form: {
-                username: '',
-                table: 0
-            }
-        }
-    }
+const Login = () => {
+    const {id} = useParams();
+    const history = useHistory();
 
-    componentDidMount(){
-        const { id } = this.props.match.params;
-        console.log(id);
-    }
+    useEffect(() => {
+        localStorage.setItem('order', '[]');
+        localStorage.setItem('comanda', '[]');
+        localStorage.setItem('table', JSON.stringify(id));
+    })
 
-    render() {
-        return (
-            <Container>
-                <Title>Cardápio Virtual</Title>
-                <Form>
-                    <input placeholder="Digite aqui o seu cpf" type="text" />
-                    <button onClick={()=> this.props.history.push('/main')}>Acessar</button>
-                </Form>
-            </Container>
-        );
+    function login(){
+        history.push('/main')
     }
+    
+    return (
+        <Container>
+            <Title>Cardápio Virtual</Title>
+            <Form>
+                <input placeholder="Digite aqui o seu cpf" type="text" />
+                <button onClick={login}>Acessar</button>
+            </Form>
+        </Container>
+    );
 }
 
 export default Login;

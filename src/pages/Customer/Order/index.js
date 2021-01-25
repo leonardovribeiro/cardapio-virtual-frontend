@@ -1,105 +1,64 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Wrapper, Item, Box } from './styles';
 import Navigation from '../../../components/Navigation';
 import Header from '../../../components/Header';
-class Order extends Component {
+import { useHistory } from 'react-router-dom';
 
-    render(){
+const Order = () => {     
+    const [order, setOrder] = useState(JSON.parse(localStorage.getItem('order')));
+    const [total, setTotal] = useState(0);
+    const history = useHistory();
+    let sum = 0;
+    
+    useEffect(() => {
+        getTotal();
+    },[])
+    
+    function getTotal(){
+        order.forEach( item => {
+            sum += item.value;
+        });
+        setTotal(sum);
+    }
+    function cancel(){
+        localStorage.setItem('order', '[]');
+        history.go(0);
+    }
+
+    function makeAWish(){
+        history.push('/comanda');
+    }
+
+    function list(){
+        return (order !== null && order.map( item =>
+            item !== null &&
+            <Item key={item.id}>
+                <span>{item.name}</span>
+                <select disabled>
+                    <option value={item.quantity}>{item.quantity}</option>
+                </select>
+                <span>{`R$ ${item.value}`}</span>
+            </Item>
+            ))
+    }
+    
         return (
             <Container>
                 <Header />
                 <Container>
                     <Wrapper>
                         <h1>Seu pedido</h1>
-                        <Item>
-                                <span>Pizza de Frango com Catupiry</span>
-                                <select>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                </select>
-
-                                <select>
-                                    <option value="200g">200g</option>
-                                    <option value="300g">300g</option>
-                                    <option value="400g">400g</option>
-                                </select>
-                                <span>R$ 100,00</span>
-                        </Item>
-                        <Item>
-                                <span>Pizza de Frango com Catupiry</span>
-                                <select>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                </select>
-
-                                <select>
-                                    <option value="200g">200g</option>
-                                    <option value="300g">300g</option>
-                                    <option value="400g">400g</option>
-                                </select>
-                                <span>R$ 100,00</span>
-                        </Item>
-                        <Item>
-                                <span>Pizza de Frango com Catupiry</span>
-                                <select>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                </select>
-
-                                <select>
-                                    <option value="200g">200g</option>
-                                    <option value="300g">300g</option>
-                                    <option value="400g">400g</option>
-                                </select>
-                                <span>R$ 100,00</span>
-                        </Item>
-                        <Item>
-                                <span>Pizza de Frango com Catupiry</span>
-                                <select>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                </select>
-
-                                <select>
-                                    <option value="200g">200g</option>
-                                    <option value="300g">300g</option>
-                                    <option value="400g">400g</option>
-                                </select>
-                                <span>R$ 100,00</span>
-                        </Item>
-                        <Item>
-                                <span>Pizza de Frango com Catupiry</span>
-                                <select>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                </select>
-
-                                <select>
-                                    <option value="200g">200g</option>
-                                    <option value="300g">300g</option>
-                                    <option value="400g">400g</option>
-                                </select>
-                                <span>R$ 100,00</span>
-                        </Item>   
+                        {list()}
+                        {`R$ ${total}`}
                     </Wrapper>
                     <Box>
-                        <button onClick={
-                            () => this.props.history.push('/main')
-                        }>Fazer pedido</button>
-                        <button onClick={
-                            () => this.props.history.push('/main')
-                        }>Cancelar</button>
+                        <button onClick={makeAWish}>Fazer pedido</button>
+                        <button onClick={cancel}>Cancelar</button>
                     </Box>
                 </Container>
                 <Navigation/>
             </Container>
         )
     }
-}
 
 export default Order;
